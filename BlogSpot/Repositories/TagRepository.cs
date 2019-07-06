@@ -8,6 +8,22 @@ namespace BlogSpot.Repositories
 {
     public class TagRepository : IRepository<Tag>
     {
+        private DataContext db;
+        public TagRepository(DataContext db)
+        {
+            this.db = db;
+        }
+
+        public IEnumerable<Tag> GetAll()
+        {
+            return db.Tags;
+        }
+
+        public Tag GetById(int id)
+        {
+            return db.Tags.Single(c => c.TagId == id);
+        }
+
         public void Create(Tag obj)
         {
             throw new NotImplementedException();
@@ -19,16 +35,6 @@ namespace BlogSpot.Repositories
         }
 
         public void Edit(Tag obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Tag> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Tag GetById(int id)
         {
             throw new NotImplementedException();
         }

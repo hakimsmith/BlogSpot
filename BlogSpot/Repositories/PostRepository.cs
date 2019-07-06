@@ -8,29 +8,39 @@ namespace BlogSpot.Repositories
 {
     public class PostRepository : IRepository<Post>
     {
-        public void Create(Post obj)
+        private DataContext db;
+        public PostRepository(DataContext db)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Post obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit(Post obj)
-        {
-            throw new NotImplementedException();
+            this.db = db;
         }
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Posts;
         }
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Posts.Single(c => c.PostId == id);
         }
+
+        public void Create(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+        }
+
+        public void Delete(Post post)
+        {
+            db.Posts.Remove(post);
+            db.SaveChanges;
+        }
+
+        public void Edit(Post post)
+        {
+            db.Posts.Update(post);
+            db.SaveChanges;
+        }
+
     }
 }
