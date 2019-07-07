@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BlogSpot.Models.Category>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CategoryIndex</title>
+</head>
+<body>
+    <h1>Catgories</h1>
+    <div>
+        @foreach (var item in Model)
+        {
+            <a href="Category/CategoryIndex/@item.CategoryId">
+
+
+
+            </a>
+        }
+    </div>
+</body>
+</html>

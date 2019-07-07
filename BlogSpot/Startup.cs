@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogSpot.Models;
+using BlogSpot.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +18,11 @@ namespace BlogSpot
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddMvc();
+            services.AddDbContext<DataContext>();
+            services.AddScoped<IRepository<Category>, CategoryRepository>();
+            services.AddScoped<IRepository<Tag>, TagRepository>();
+            services.AddScoped<IRepository<Post>, PostRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +39,7 @@ namespace BlogSpot
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Category}/{action=CategoryIndex}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 

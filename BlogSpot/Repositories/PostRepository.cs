@@ -33,13 +33,13 @@ namespace BlogSpot.Repositories
         public void Delete(Post post)
         {
             db.Posts.Remove(post);
-            db.SaveChanges;
+            db.SaveChanges();
         }
 
         public void Edit(Post post)
         {
             db.Posts.Update(post);
-            db.SaveChanges;
+            db.SaveChanges();
         }
 
     }

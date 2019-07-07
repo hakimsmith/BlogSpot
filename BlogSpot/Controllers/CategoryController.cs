@@ -22,7 +22,7 @@ namespace BlogSpot.Controllers
             return View(model);
         }
 
-        public ViewResult Details(int id)
+        public ActionResult Details(int id)
         {
             var model = categoryRepo.GetById(id);
             return View(model);

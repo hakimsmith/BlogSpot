@@ -17,8 +17,8 @@ namespace BlogSpot
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogSpot;Trusted_Connection=True;";
 
-            //optionsBuilder.UseSqlServer(connectionString)
-            //              .UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer(connectionString)
+                          .UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
         }
