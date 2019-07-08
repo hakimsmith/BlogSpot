@@ -18,5 +18,10 @@ namespace BlogSpot.Models
             TagId = tagId;
             TagName = tagName;
         }
+
+        public Tag()
+        {
+
+        }
     }
 }

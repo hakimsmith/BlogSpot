@@ -20,5 +20,10 @@ namespace BlogSpot.Models
             CategoryName = categoryName;
             ImageUrl = imageUrl;
         }
+        
+        public Category()
+        {
+
+        }
     }
 }
