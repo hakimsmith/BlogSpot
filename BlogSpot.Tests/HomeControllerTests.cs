@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BlogSpot.Tests
 {
-    class CategoryControllerTests
+    class HomeControllerTests
     {
+
     }
 }

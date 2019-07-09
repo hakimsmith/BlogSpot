@@ -1,16 +1,56 @@
-﻿<!DOCTYPE html>
+﻿
+<link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>BlogSpot</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="navbar">
+        <a href="/Home/Index">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Add Post
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/Post/Create/1">Pets</a>
+                <a href="/Post/Create/2">Sports</a>
+
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Blogs
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/Post/AllBlogs">All Blogs</a>
+                <a href="/Post/Details/1">Pets</a>
+                <a href="/Post/Details/2">Sports</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Tags
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/Post/Details/1">C#</a>
+                <a href="/Post/Details/1">Education</a>
+                <a href="/Post/Details/2">Ford</a>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <footer>
+            &copy; BlogSpot 2019
+        </footer>
     </div>
-    <footer>
-       &copy; BlogSpot 2019
-    </footer>
 </body>
 </html>
