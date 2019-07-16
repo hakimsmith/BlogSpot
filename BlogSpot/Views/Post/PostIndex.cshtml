@@ -9,11 +9,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Posts</title>
 </head>
 <body>
     <div>
-        @RenderBody()
+        <h2> Posts</h2>
     </div>
+    <main>
+
+        @foreach (var item in Model)
+        {
+
+            <a href="/Post/SinglePost/@item.PostId">
+
+
+                <h3>@item.PostTitle</h3>
+            </a>
+        }
+
+    </main>
 </body>
 </html>

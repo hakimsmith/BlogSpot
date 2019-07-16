@@ -16,13 +16,13 @@ namespace BlogSpot.Controllers
             this.categoryRepo = categoryRepo;
         }
 
-        public ViewResult Index()
+        public ViewResult CategoryIndex()
         {
             var model = categoryRepo.GetAll();
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult CategoryDetails(int id)
         {
             var model = categoryRepo.GetById(id);
             return View(model);

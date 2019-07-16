@@ -10,11 +10,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Post</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    <section id=" home"></section>
+    <header>
+        <h1>@Model.CategoryName</h1>
+    </header>
+    <main>
+
+        @foreach (var item in Model.Posts)
+        {
+            <a href="/Post/SinglePost/@item.PostId">
+
+                <img src="~/Images/@item.ImageUrl" alt="Alternate Text" />
+                <h3>@item.PostTitle</h3>
+
+            </a>
+        }
+
+    </main>
 </body>
 </html>
+

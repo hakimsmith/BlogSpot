@@ -1,4 +1,7 @@
-﻿
+﻿@model BlogSpot.Models.Post
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     Layout = null;
 }
@@ -11,5 +14,18 @@
     <title>DeletePost</title>
 </head>
 <body>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Blogspot</h4>
+        <hr />
+
+
+        <form asp-action="DeletePost">
+            <input type="hidden" value="@ViewBag.PostId" asp-for="PostId" />
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-controller="Category" asp-action="CategoryIndex">Back to Categories Page</a>
+        </form>
+    </div>
 </body>
 </html>

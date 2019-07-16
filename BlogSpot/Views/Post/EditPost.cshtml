@@ -1,4 +1,7 @@
-﻿
+﻿@model BlogSpot.Models.Post
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     Layout = null;
 }
@@ -11,5 +14,35 @@
     <title>EditPost</title>
 </head>
 <body>
+    <br />
+    <h4>BlogSpot</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="EditPost">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" value="@Model.PostId" asp-for="PostId" />
+                <div class="form-group">
+                    <label asp-for="Body" class="control-label"></label>
+                    <br />
+                    <textarea asp-for="Body" class="form-control" style="width:300px; height:200px;">
+                    </textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="CategoryId" type="hidden" value="@Model.CategoryId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-controller="Category" asp-action="CategoryIndex">Back to Categories Page</a>
+    </div>
+
+
 </body>
 </html>
